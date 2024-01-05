@@ -72,7 +72,6 @@ def signup(session):
     data = f"email={uid}@olen.com&password=l242444"
     request = session.post(url,headers=headers,data=data)
     cookies = session.cookies
-    print(cookies)
     id=save_cookies(cookies)
     return [cookies['user_id'],f'{id}']
 
@@ -101,7 +100,6 @@ def submit(user_id,session,id,data):
             if(p>c):
                 first_key = list(json_data["new_images"].keys())[0]
                 url = json_data["new_images"][first_key]['i']
-                print(url)
                 break
         time.sleep(3)
     with open('cookies.json','r') as infile:
@@ -110,7 +108,6 @@ def submit(user_id,session,id,data):
     cookies_dict["cookies"][id][2]=cookies_dict["cookies"][id][2]+1
     with open('cookies.json','w') as outfile:
         json.dump(cookies_dict,outfile)
-    print(url)
     if(url!=None):
        return "https://spicy.porn/imgthumb/"+url
     else:
