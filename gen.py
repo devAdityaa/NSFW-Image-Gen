@@ -2,7 +2,6 @@ import requests
 import json
 import time
 import asyncio
-import uuid
 import shortuuid
 
 
