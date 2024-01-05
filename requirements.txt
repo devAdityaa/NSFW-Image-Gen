@@ -1,0 +1,6 @@
+aiohttp
+asyncio
+shortuuid
+requests
+fastapi
+uvicorn
