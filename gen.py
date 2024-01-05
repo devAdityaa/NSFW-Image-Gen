@@ -3,6 +3,7 @@ import json
 import time
 import asyncio
 import uuid
+import shortuuid
 
 
 headers = {
@@ -68,8 +69,8 @@ def load_cookies():
 
 def signup(session):
     url = "https://spicy.porn/signup"
-    id = uuid.uuid4()
-    data = f"email={id}@olen.com&password=l242444"
+    uid = shortuuid.uuid()
+    data = f"email={uid}@olen.com&password=l242444"
     request = session.post(url,headers=headers,data=data)
     cookies = session.cookies
     print(cookies)
