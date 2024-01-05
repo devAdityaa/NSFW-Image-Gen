@@ -4,3 +4,4 @@ shortuuid
 requests
 fastapi
 uvicorn
+typing
